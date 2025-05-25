@@ -14,9 +14,6 @@ services:
     networks:
       - default
 
-
-
-
   mosquitto:
     container_name: mosquitto
     image: eclipse-mosquitto
@@ -64,6 +61,7 @@ services:
     volumes:
       - ./tasmoadmin:/data
     restart: unless-stopped
+
 
   zigbee2mqtt:
     container_name: zigbee2mqtt
