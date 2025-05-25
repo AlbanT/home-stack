@@ -1,15 +1,16 @@
 version: '3.8'
 
 services:
-  homeassistant:
+    homeassistant:
     container_name: homeassistant
     image: ghcr.io/home-assistant/home-assistant:stable
     volumes:
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
-      - /run/dbus:/run/dbus:ro   
+      - /run/dbus:/run/dbus:ro
     restart: unless-stopped
-    network_mode: host
+    networks:
+      - default
 
   mosquitto:
     container_name: mosquitto
