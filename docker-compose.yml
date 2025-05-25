@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-    homeassistant:
+  homeassistant:
     container_name: homeassistant
     image: ghcr.io/home-assistant/home-assistant:stable
     volumes:
@@ -11,6 +11,7 @@ services:
     restart: unless-stopped
     networks:
       - default
+
 
   mosquitto:
     container_name: mosquitto
